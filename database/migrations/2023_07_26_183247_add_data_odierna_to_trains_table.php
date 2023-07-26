@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::table('trains', function (Blueprint $table) {
-            $table->timestamps('data_di_oggi');
+            $table->date('data_odierna') -> default(date('Y-m-d'));
         });
     }
 
@@ -26,7 +26,7 @@ return new class extends Migration
     public function down()
     {
         Schema::table('trains', function (Blueprint $table) {
-            $table->timestamps('data_di_oggi');
+            $table->dropColumn('data_odierna');
         });
     }
 };

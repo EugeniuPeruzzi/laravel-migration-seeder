@@ -25,7 +25,7 @@ return new class extends Migration
             $table->boolean('in_orario');
             $table->boolean('cancellato');
             $table->date('data');
-            $table->timestamps('data_di_oggi');
+            $table->timestampsexit();
         });
     }
 
