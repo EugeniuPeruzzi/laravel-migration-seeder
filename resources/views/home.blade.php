@@ -23,11 +23,15 @@
                     <div class="card m-3" style="width: 18rem;">
                         <div class="card-body">
                             <h5 class="card-title">{{ $train->azienda }}</h5>
-                            <h6 class="">Partenza da: <strong>{{ $train->stazione_di_partenza }}</strong></h6>
+                            <h6 class="mt-4">Partenza da: <strong>{{ $train->stazione_di_partenza }}</strong></h6>
                             <h6 class="">Arrivo a: <strong>{{ $train->stazione_di_arrivo }}</strong></h6>
-                            <p>Orario di partenza: <strong>{{ $train->orario_di_partenza }}</strong></p>
+                            <p>Orario di partenza:
+                                <strong>{{ $train->cancellato ? 'Treno cancellato' : $train->orario_di_partenza }}</strong>
+                            </p>
                             <p>Orario diarrivo: <strong>{{ $train->orario_di_arrivo }}</strong></p>
-                            <p>{{ $train->in_orario ? 'In pefetto oraio' : 'In ritardo' }}</p>
+                            <p><strong>{{ $train->in_orario ? 'In pefetto oraio' : 'In ritardo' }}</strong></p>
+                            <p>Codice treno: {{ $train->codice_treno }} con carozze numero:
+                                {{ $train->numero_carrozze }} </p>
                         </div>
                     </div>
                 @endforeach
