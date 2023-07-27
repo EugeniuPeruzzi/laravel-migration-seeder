@@ -35,6 +35,26 @@
                         </div>
                     </div>
                 @endforeach
+
+            </div>
+            <div class="col">
+                <h1>BONUS</h1>
+                @foreach ($bonus_trains as $bonus_train)
+                    <div class="card m-3" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ $bonus_train->azienda }}</h5>
+                            <h6 class="mt-4">Partenza da: <strong>{{ $bonus_train->start_station }}</strong></h6>
+                            <h6 class="">Arrivo a: <strong>{{ $bonus_train->end_station }}</strong></h6>
+                            <p>Orario di partenza:
+                                <strong>{{ $bonus_train->canceled ? 'Treno cancellato' : $bonus_train->departure_time }}</strong>
+                            </p>
+                            <p>Orario diarrivo: <strong>{{ $bonus_train->arrival_time }}</strong></p>
+                            <p><strong>{{ $bonus_train->in_time ? 'In pefetto oraio' : 'In ritardo' }}</strong></p>
+                            <p>Codice treno: {{ $bonus_train->ticket_code }} con carozze numero:
+                                {{ $bonus_train->number_vagons }} </p>
+                        </div>
+                    </div>
+                @endforeach
             </div>
         </div>
     </div>
