@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\Guest\PageController as PageController;
-
+use App\Http\Controllers\Guest\BonusController as BonusController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,3 +17,4 @@ use App\Http\Controllers\Guest\PageController as PageController;
 */
 
 Route::get('/', [PageController::class, 'index']) -> name('home');
+Route::get('/bonus', [BonusController::class, 'bonuspage']) -> name('bonuspage');
